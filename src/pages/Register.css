@@ -1,20 +1,3 @@
-/* ===== Global ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #6a0dad, #9b5de5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  overflow-x: hidden;
-}
 
 /* ===== Main Wrapper ===== */
 .register {
