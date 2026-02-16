@@ -22,9 +22,10 @@ function Dashboard() {
   const editingTask = (task) => {
     navigate("/create-post", { state: { post: task } });
   };
+
   const handleDelete = async (id) => {
     const confirmDelete = window.confirm(
-      "Are you sure you want to delete this post?",
+      "Are you sure you want to delete this post?"
     );
 
     if (!confirmDelete) return;
@@ -45,6 +46,7 @@ function Dashboard() {
   useEffect(() => {
     fetchData();
   }, []);
+
   return (
     <div className="dashboard-page">
       <Navbar />
@@ -54,19 +56,20 @@ function Dashboard() {
           <div className="welcome-text">
             <h1>Welcome to your Dashboard</h1>
             <p>
-              Manage yoyr posts,track engagment,and connect with your audience.
+              Manage your posts, track engagement, and connect with your
+              audience.
             </p>
           </div>
         </div>
 
         <div className="dashboard-stats-overview">
           <div className="dash-card">
-            <h3>total Posts</h3>
+            <h3>Total Posts</h3>
             <span className="dash-number">{tasks.length}</span>
           </div>
 
           <div className="dash-card">
-            <h3>your Stories</h3>
+            <h3>Your Stories</h3>
             <span className="dash-number">5</span>
           </div>
 
@@ -78,7 +81,7 @@ function Dashboard() {
 
         <section className="posts-section">
           <div className="section-header">
-            <h2 className="section-title">Recent feed</h2>
+            <h2 className="section-title">Recent Feed</h2>
             <button
               className="create-shortcut-btn"
               onClick={() => navigate("/create-post")}
@@ -119,7 +122,9 @@ function Dashboard() {
                 <div className="post-card-content">
                   <div className="post-meta">
                     <span className="post-author">{task.author}</span>
-                    <span className="post-date">{task.createAt}</span>
+                    <span className="post-date">
+                      {new Date(task.createdAt).toLocaleDateString()} {/* Fixed 'createdAt' */}
+                    </span>
                   </div>
 
                   <h3 className="post-card-title">{task.title}</h3>
